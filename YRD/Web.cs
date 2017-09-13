@@ -6,6 +6,7 @@ using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.VisualBasic;
 
 namespace YRD
 {
@@ -80,8 +81,9 @@ namespace YRD
 
         public static void SendMail(List<string> lnum, string res)
         {
-            var emailAcount = "konista@163.com";
-            var emailPassword = "ac-mmkkmy";
+            string emailAcount = Interaction.InputBox("发件箱地址", "请输入发件箱地址", "konista@163.com", -1, -1);
+            string emailPassword = Interaction.InputBox("发件箱密码", "请输入发件箱密码", "", -1, -1);
+            
             var reciver = "konista@163.com";
             MailMessage message = new MailMessage();
             //设置发件人,发件人需要与设置的邮件发送服务器的邮箱一致
